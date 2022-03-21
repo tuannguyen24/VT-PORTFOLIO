@@ -72,20 +72,31 @@ body {
   transition: all 0.5s $cubic-smooth;
 }
 
-.manage-sections {
-  .menu {
-    --transition: all 0.3s $cubic-smooth;
-    position: fixed;
+.manage-info {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: $zIndex-lv-4;
+  --transition: 0.3s cubic-bezier(0.17, 0.67, 0.68, 0.78) all;
+
+  .menu,
+  .body {
+    position: absolute;
     bottom: 0;
     right: 0;
+    @include midFlex();
+    transition: var(--transition);
+  }
+
+  .menu {
+    --transition: all 0.3s cubic-bezier(0.17, 0.67, 0.68, 0.78);
+    z-index: $zIndex-lv-3;
     width: 70px;
     height: 60px;
-    z-index: $zIndex-lv-4;
     background: $white-cl;
     @include midFlex();
     flex-direction: column;
     cursor: pointer;
-    transition: var(--transition);
 
     &:hover {
       background-color: rgba($color: $white-cl, $alpha: 0.8);
@@ -100,7 +111,71 @@ body {
       background-color: black;
       margin: 3px 0;
       display: block;
+      transition: var(--transition);
     }
+  }
+  .body {
+    z-index: $zIndex-lv-2;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+    background: rgb(255, 255, 255);
+    ul {
+      li {
+        margin: 30px 0;
+        a {
+          @include text($fs-body, $font-regular, 1, $black-cl, capitalize);
+          position: relative;
+          display: flex;
+          align-items: center;
+          &:before {
+            content: ' ';
+            width: 0;
+            height: 2px;
+            margin-right: 15px;
+            background: $black-cl;
+            display: block;
+            transition: all 0.3s $cubic-smooth;
+          }
+          &:hover {
+            &:before {
+              width: 40px;
+              transition: all 0.3s $cubic-smooth;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.manage-active {
+  .menu,
+  .body {
+    --transition: 0.3s cubic-bezier(0.17, 0.67, 0.53, 0.98) all;
+    transition: var(--transition);
+  }
+  .menu {
+    span {
+      background: $black-cl;
+      margin: 0;
+      transition: var(--transition);
+      &:nth-child(1) {
+        transform: translateY(5px) rotate(45deg);
+      }
+      &:nth-child(2) {
+        opacity: 0;
+        transition: opacity 0.2s linear;
+      }
+      &:nth-child(3) {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  .body {
+    width: 350px;
+    height: 400px;
+    visibility: visible;
+    transition: var(--transition);
   }
 }
 

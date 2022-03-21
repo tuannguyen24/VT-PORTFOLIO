@@ -54,6 +54,15 @@ $(document).ready(function () {
   };
   activeCursor();
 
+  // manage info menu
+  const manageInfoMenu = () => {
+    const menu = $('.manage-info .menu');
+    menu.on('click', () => {
+      $('.manage-info').toggleClass('manage-active');
+    });
+  };
+  manageInfoMenu();
+
   // setup hover effect title main
   let hoverEffectTranslateMatrix = () => {
     const signature = $('footer .signature');
