@@ -1,0 +1,166 @@
+main {
+  background: $black-cl;
+  border-bottom: 1px solid $white-cl;
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: $zIndex-lv-4;
+    padding: 100px 0;
+    background-image: linear-gradient(transparent 55%, $white-cl 200%);
+  }
+  .banner {
+    position: relative;
+    @include midFlex();
+    min-height: 100vh;
+    @include desktop {
+      min-height: 70vh;
+    }
+    @include mobile {
+      min-height: 60vh;
+    }
+    &__inner {
+      text-align: center;
+      h1 {
+        position: relative;
+        z-index: $zIndex-lv-2;
+        @include text($fs-main, $font-SaintMonica, 1, $white-cl, uppercase);
+        user-select: none;
+        @include mobile {
+          font-size: 3.2rem;
+        }
+      }
+    }
+    &__vectary {
+      width: 800px;
+      height: 800px;
+      @include mid();
+      @include tablet {
+        width: 600px;
+        height: 600px;
+      }
+      @include mobile {
+        max-width: 375px;
+        max-height: 375px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .divider-vertical {
+    margin: 100px auto;
+    left: 0;
+    right: 0;
+    width: 1px;
+    height: 150px;
+    overflow: hidden;
+    @include desktop {
+      margin: 50px auto;
+    }
+    @include mobile {
+      margin: 30px auto;
+    }
+
+    span {
+      content: '';
+      width: 1px;
+      height: 150px;
+      background: $white-cl;
+      display: block;
+      animation: dividerDraw 2s infinite ease-in-out forwards;
+    }
+
+    @keyframes dividerDraw {
+      0% {
+        transform: translateY(-150px);
+      }
+      100% {
+        transform: translateY(150px);
+      }
+    }
+  }
+
+  .feature-project {
+    margin: 100px auto;
+    .inner {
+      text-align: center;
+      margin-bottom: 100px;
+      h2 {
+        @include text($fs-h4, $font-medium-italic, 1, $white-cl, capitalize);
+      }
+    }
+
+    .projects {
+      &__item {
+        @include midFlex();
+        justify-content: flex-start;
+        height: 80vh;
+        margin: 100px 0;
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        @include desktop {
+          height: 60vh;
+        }
+        @include mobile {
+          align-items: flex-start;
+          flex-direction: column-reverse;
+          height: 40vh;
+          padding: 0 10px;
+          margin-bottom: 50px;
+        }
+        .slider {
+          width: calc(100vw - 500px);
+          height: 600px;
+          position: relative;
+          border-radius: 10px;
+          @include desktop {
+            height: 400px;
+          }
+          @include mobile {
+            width: 95vw;
+            height: 450px;
+          }
+          .carousel-cell {
+            width: 100%;
+            height: 100%;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
+        .info {
+          padding-left: 50px;
+          @include mobile {
+            padding-left: 0;
+            padding-bottom: 40px;
+          }
+          .topic {
+            @include text($fs-body, $font-light, auto, $white-cl, none);
+            @include mobile {
+              font-size: $fs-small-body;
+            }
+          }
+          .title {
+            @include text($fs-h3, $font-bold, auto, $white-cl, capitalize);
+            padding: 20px 0 50px 0;
+            @include mobile {
+              padding: 10px 0 20px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

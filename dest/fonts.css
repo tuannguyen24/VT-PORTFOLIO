@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Poppins-ELight';
+  src: url('../fonts/Poppins-ExtraLight.woff') format('woff');
+  src: url('../fonts/Poppins-ExtraLight.woff2') format('woff2');
+  display: fallback;
+}
+
+@font-face {
+  font-family: 'Poppins-R';
+  src: url('../fonts/Poppins-Regular.woff') format('woff');
+  src: url('../fonts/Poppins-Regular.woff2') format('woff2');
+  display: fallback;
+}
+
+@font-face {
+  font-family: 'Poppins-M';
+  src: url('../fonts/Poppins-Medium.woff') format('woff');
+  src: url('../fonts/Poppins-Medium.woff2') format('woff2');
+  display: fallback;
+}
+
+@font-face {
+  font-family: 'Poppins-M-Italic';
+  src: url('../fonts/Poppins-MediumItalic.woff') format('woff');
+  src: url('../fonts/Poppins-MediumItalic.woff2') format('woff2');
+  display: fallback;
+}
+
+@font-face {
+  font-family: 'Poppins-B';
+  src: url('../fonts/Poppins-Bold.woff') format('woff');
+  src: url('../fonts//Poppins-Bold.woff2') format('woff2');
+  display: fallback;
+}
+
+@font-face {
+  font-family: 'Poppins-Black';
+  src: url('../fonts/Poppins-Black.woff') format('woff');
+  src: url('../fonts/Poppins-Black.woff2') format('woff2');
+  display: fallback;
+}
+
+@font-face {
+  font-family: 'SaintMonica';
+  src: url('../fonts/SaintMonicaRegular.woff') format('woff');
+  src: url('../fonts/SaintMonicaRegular.woff2') format('woff2');
+  display: fallback;
+}

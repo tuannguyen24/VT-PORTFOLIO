@@ -1,0 +1,41 @@
+a {
+  text-decoration: none;
+}
+
+.btn-primary {
+  --transition: all 0.1s linear;
+  width: 170px;
+  height: 45px;
+  background-color: $white-cl;
+  border-radius: 30px;
+  @include midFlex();
+  cursor: pointer;
+  position: relative;
+  @include mobile {
+    height: 35px;
+    width: 150px;
+  }
+  span {
+    @include text($fs-small-body, $font-regular, 1, $black-cl, capitalize);
+    @include mobile {
+      font-size: 1rem;
+    }
+  }
+  &:after {
+    content: '';
+    margin-left: 10px;
+    width: 15px;
+    height: 6px;
+    position: relative;
+    background-image: url('/assets/icons/right-arrow-black-icon.svg');
+    display: block;
+    transition: var(--transition);
+  }
+
+  &:hover {
+    &::after {
+      transform: translateY(-3px) rotate(-30deg);
+      transition: var(--transition);
+    }
+  }
+}
