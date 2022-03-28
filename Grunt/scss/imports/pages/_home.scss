@@ -1,20 +1,21 @@
 main {
-  background: $black-cl;
-  border-bottom: 1px solid $white-cl;
   position: relative;
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: $zIndex-lv-4;
-    padding: 100px 0;
-    background-image: linear-gradient(transparent 55%, $white-cl 200%);
+
+  .container-fluid {
+    padding: 0 40px;
+    @include tablet {
+      padding: 0 20px;
+    }
+    @include mobile {
+      padding: 0 10px;
+    }
   }
+
   .banner {
     position: relative;
     @include midFlex();
+    z-index: $zIndex-lv-2;
+    background: $black-cl;
     min-height: 100vh;
     @include desktop {
       min-height: 70vh;
@@ -53,19 +54,26 @@ main {
       }
     }
   }
+  .wrapper-divider {
+    z-index: $zIndex-lv-2;
+    background: $black-cl;
+    padding: 100px 0;
+    position: relative;
+    @include desktop {
+      padding: 50px 0;
+    }
+    @include mobile {
+      padding: 30px 0;
+    }
+  }
   .divider-vertical {
-    margin: 100px auto;
+    margin: 0 auto;
     left: 0;
     right: 0;
     width: 1px;
     height: 150px;
     overflow: hidden;
-    @include desktop {
-      margin: 50px auto;
-    }
-    @include mobile {
-      margin: 30px auto;
-    }
+    position: relative;
 
     span {
       content: '';
@@ -87,7 +95,9 @@ main {
   }
 
   .feature-project {
-    margin: 100px auto;
+    z-index: $zIndex-lv-2;
+    background: $black-cl;
+    position: relative;
     .inner {
       text-align: center;
       margin-bottom: 100px;
@@ -97,13 +107,30 @@ main {
     }
 
     .projects {
+      padding: 100px 0;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: $zIndex-lv-4;
+        padding: 100px 0;
+        background-image: linear-gradient(transparent 55%, $white-cl 200%);
+      }
       &__item {
         @include midFlex();
-        justify-content: flex-start;
-        height: 80vh;
-        margin: 100px 0;
-        &:first-child {
-          margin-top: 0;
+        margin-bottom: 200px;
+        clear: both;
+        position: relative;
+        &:nth-child(even) {
+          flex-direction: row-reverse;
+          @include mobile {
+            flex-direction: column-reverse;
+          }
+        }
+        &:last-child {
+          margin-bottom: 0;
         }
         &:last-child {
           margin-bottom: 0;
@@ -114,34 +141,59 @@ main {
         @include mobile {
           align-items: flex-start;
           flex-direction: column-reverse;
-          height: 40vh;
-          padding: 0 10px;
           margin-bottom: 50px;
         }
-        .slider {
-          width: calc(100vw - 500px);
-          height: 600px;
+        .img {
+          width: 70%;
+          height: 700px;
+          overflow: hidden;
           position: relative;
-          border-radius: 10px;
           @include desktop {
-            height: 400px;
+            height: 550px;
+          }
+          @include tablet {
+            height: 350px;
           }
           @include mobile {
-            width: 95vw;
-            height: 450px;
+            width: 100%;
           }
-          .carousel-cell {
+          .up,
+          .down {
             width: 100%;
             height: 100%;
-            img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
+            object-fit: cover;
+            @include mobile {
+              object-fit: contain;
+            }
+          }
+          .down {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            @include mid();
+            opacity: 0;
+            transition: opacity 0.5s $cubic-smooth;
+            @include mobile {
+              object-fit: contain;
+            }
+          }
+
+          &:hover {
+            .up {
+              opacity: 0;
+              transition: opacity 0.5s $cubic-smooth;
+            }
+            .down {
+              opacity: 1;
+              transition: opacity 0.5s $cubic-smooth;
             }
           }
         }
         .info {
           padding-left: 50px;
+          &:nth-child(even) {
+            padding-right: 50px;
+          }
           @include mobile {
             padding-left: 0;
             padding-bottom: 40px;
@@ -157,6 +209,11 @@ main {
             padding: 20px 0 50px 0;
             @include mobile {
               padding: 10px 0 20px 0;
+            }
+          }
+          .btn-primary {
+            &:after {
+              background-color: $black-cl;
             }
           }
         }

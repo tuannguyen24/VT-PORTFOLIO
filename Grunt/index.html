@@ -21,10 +21,10 @@
     <link rel="stylesheet" href="dest/stylelibs.min.css" />
   </head>
   <body>
-    <div class="loading">
+    <!-- <div class="loading">
       <img src="/assets/image/vectary-3d-transparent.png" alt="" />
       <span class="count"> 100% </span>
-    </div>
+    </div> -->
     <div class="cursor">
       <img src="/assets/icons/cursor-left-arrow-icon.png" alt="" />
       <img src="/assets/icons/cursor-right-arrow-icon.png" alt="" />
@@ -60,15 +60,15 @@
             <a href="/" class="style-active"> T. </a>
           </div>
           <div class="about style-active">
-            <a class="style-active" href="/about">Info </a>
+            <a class="style-active" href="./about.html">Info </a>
           </div>
         </div>
       </div>
     </header>
 
-    <main>
+    <main data-scroll-container>
       <!-- banner -->
-      <div class="banner">
+      <div class="banner" data-scroll-section>
         <div class="banner__inner">
           <h1 class="title-main style-view">
             NGUYEN VAN TUAN <br />
@@ -81,140 +81,120 @@
       </div>
 
       <!-- divider -->
-      <div class="divider-vertical">
-        <span></span>
+      <div class="wrapper-divider" data-scroll-section>
+        <div class="divider-vertical">
+          <span></span>
+        </div>
       </div>
 
       <!-- features project -->
-      <div class="feature-project">
-        <div class="inner">
-          <h2>Case Studies</h2>
-        </div>
-        <div class="projects">
-          <div class="projects__item">
-            <div class="slider style-slide main-carousel">
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/bambuup/bambuup-show-1.JPG" alt="" />
-              </div>
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/bambuup/bambuup-show-2.JPG" alt="" />
-              </div>
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/bambuup/bambuup-show-3.JPG" alt="" />
-              </div>
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/bambuup/bambuup-show-4.JPG" alt="" />
-              </div>
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/bambuup/bambuup-show-5.JPG" alt="" />
-              </div>
-            </div>
-            <div class="info">
-              <h6 class="topic">Promotion website and blog</h6>
-              <h3 class="title">Bambuup</h3>
-              <div class="btn-primary style-active"><span>Read more</span></div>
-            </div>
+      <div class="feature-project" data-scroll-section>
+        <div class="container-fuild" data-scroll>
+          <div class="inner" data-scroll>
+            <h2>Case Studies</h2>
           </div>
-          <div class="projects__item">
-            <div class="slider style-slide main-carousel">
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/fur/furnitown-show-1.JPG" alt="" />
+          <div class="projects" data-scroll>
+            <div class="projects__item" data-scroll>
+              <div class="img">
+                <img
+                  data-scroll
+                  data-scroll-speed="-1"
+                  src="./assets/project/bambuup/bambuup-show-1.png"
+                  alt=""
+                  class="up"
+                />
+                <img src="./assets/project/bambuup/bambuup-show-2.png" alt="" class="down" />
               </div>
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/fur/furnitown-show-2.JPG" alt="" />
-              </div>
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/fur/furnitown-show-3.JPG" alt="" />
-              </div>
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/fur/furnitown-show-4.JPG" alt="" />
-              </div>
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/fur/furnitown-show-5.JPG" alt="" />
-              </div>
-            </div>
-            <div class="info">
-              <h6 class="topic">Promotion website</h6>
-              <h3 class="title">Furnitown</h3>
-              <div class="btn-primary style-active"><span>Read more</span></div>
-            </div>
-          </div>
-          <div class="projects__item">
-            <div class="slider style-slide main-carousel">
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/kymco/kymco-show-1.JPG" alt="" />
-              </div>
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/kymco/kymco-show-2.JPG" alt="" />
-              </div>
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/kymco/kymco-show-3.JPG" alt="" />
-              </div>
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/kymco/kymco-show-4.JPG" alt="" />
-              </div>
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/kymco/kymco-show-5.JPG" alt="" />
+              <div class="info" data-scroll>
+                <h6 class="topic">Promotion website and blog</h6>
+                <h3 class="title">Bambuup</h3>
+                <div class="btn-primary style-active"><span>Read more</span></div>
               </div>
             </div>
-            <div class="info">
-              <h6 class="topic">Promotion website and blog</h6>
-              <h3 class="title">Kymco</h3>
-              <div class="btn-primary style-active"><span>Read more</span></div>
-            </div>
-          </div>
-          <div class="projects__item">
-            <div class="slider style-slide main-carousel">
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/gbox/gbox-show-1.JPG" alt="" />
+            <div class="projects__item" data-scroll>
+              <div class="img" data-scroll>
+                <img
+                  data-scroll
+                  data-scroll-speed="-1"
+                  src="./assets/project/fur/furnitown-show-1.png"
+                  alt=""
+                  class="up"
+                />
+                <img src="./assets/project/fur/furnitown-show-2.png" alt="" class="down" />
               </div>
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/gbox/gbox-show-2.JPG" alt="" />
-              </div>
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/gbox/gbox-show-3.JPG" alt="" />
-              </div>
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/gbox/gbox-show-4.JPG" alt="" />
-              </div>
-              <div class="slider__item carousel-cell">
-                <img src="/assets/project/gbox/gbox-show-5.JPG" alt="" />
+              <div class="info" data-scroll>
+                <h6 class="topic">Promotion website</h6>
+                <h3 class="title">Furnitown</h3>
+                <div class="btn-primary style-active"><span>Read more</span></div>
               </div>
             </div>
-            <div class="info">
-              <h6 class="topic">Promotion website and blog</h6>
-              <h3 class="title">G Box</h3>
-              <div class="btn-primary style-active"><span>Read more</span></div>
+            <div class="projects__item" data-scroll>
+              <div class="img" data-scroll>
+                <img
+                  data-scroll
+                  data-scroll-speed="-1"
+                  src="./assets/project/gbox/gbox-show-1.png"
+                  alt=""
+                  class="up"
+                />
+                <img src="./assets/project/gbox/gbox-show-2.png" alt="" class="down" />
+              </div>
+              <div class="info" data-scroll>
+                <h6 class="topic">Promotion website and blog</h6>
+                <h3 class="title">G Box</h3>
+                <div class="btn-primary style-active"><span>Read more</span></div>
+              </div>
+            </div>
+            <div class="projects__item" data-scroll>
+              <div class="img" data-scroll>
+                <img
+                  data-scroll
+                  data-scroll-speed="-1"
+                  src="./assets/project/kymco/kymco-show-1.png"
+                  alt=""
+                  class="up"
+                />
+                <img src="./assets/project/kymco/kymco-show-2.png" alt="" class="down" />
+              </div>
+              <div class="info" data-scroll>
+                <h6 class="topic">Promotion website and blog</h6>
+                <h3 class="title">Kymco</h3>
+                <div class="btn-primary style-active"><span>Read more</span></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- footer -->
+      <footer data-scroll-sticky>
+        <div class="container">
+          <div class="signature">
+            <h4 data-tilt class="style-view">Nguyen Van Tuan</h4>
+          </div>
+          <div class="info-social">
+            <div class="email style-active">
+              <img src="/assets/icons/airplane-black-icon.png" alt="" />
+              <a href="mailto:tuanngv24.4@gmail.com">tuanngv24.4@gmail.com</a>
+            </div>
+            <div class="social">
+              <a class="style-active" href="https://www.facebook.com/TuanNguyen.244">Facebook</a>
+              <a class="style-active" href="https://www.linkedin.com/in/nguyen-tuan-748bb7202/"
+                >LinkedIn</a
+              >
+            </div>
+          </div>
+        </div>
+      </footer>
     </main>
 
-    <!-- footer -->
-    <footer>
-      <div class="container">
-        <div class="signature">
-          <h4 data-tilt class="style-view">Nguyen Van Tuan</h4>
-        </div>
-        <div class="info-social">
-          <div class="email style-active">
-            <img src="/assets/icons/airplane-black-icon.png" alt="" />
-            <a href="mailto:tuanngv24.4@gmail.com">tuanngv24.4@gmail.com</a>
-          </div>
-          <div class="social">
-            <a class="style-active" href="https://www.facebook.com/TuanNguyen.244">Facebook</a>
-            <a class="style-active" href="https://www.linkedin.com/in/nguyen-tuan-748bb7202/"
-              >LinkedIn</a
-            >
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <script src="/js/libs/_jquery.js"></script>
-    <script src="/js/libs/flickity.pkgd.min.js"></script>
-    <script src="/js/libs/tilt.jquery.min.js"></script>
+    <script src="./js/libs/_jquery.js"></script>
+    <script src="./js/libs/flickity.pkgd.min.js"></script>
+    <script src="./js/libs/gsap.min.js"></script>
+    <script src="./js/libs/ScrollTrigger.min.js"></script>
+    <script src="./js/libs/locomotive-scroll.min.js"></script>
+    <script src="./js/libs/mobile-detect.min.js"></script>
+    <script src="./js/libs/tilt.jquery.min.js"></script>
     <script type="text/javascript" src="dest/jsmain.min.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
   </body>

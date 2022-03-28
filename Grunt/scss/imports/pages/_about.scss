@@ -1,0 +1,290 @@
+.aboutpage {
+  position: relative;
+  width: 100%;
+
+  section {
+    z-index: $zIndex-lv-2;
+    position: relative;
+    background-color: $black-cl;
+  }
+
+  .skills,
+  .timelines {
+    padding: 100px 0;
+  }
+
+  .info {
+    margin-top: 100px;
+    min-height: 100vh;
+    @include mobile {
+      min-height: 60vh;
+    }
+    .container {
+      @include midFlex();
+      justify-content: space-between;
+      @include mobile {
+        flex-direction: column-reverse;
+      }
+    }
+    &__img {
+      position: relative;
+      @include mobile {
+        margin-top: 30px;
+        margin-bottom: 50px;
+      }
+      .wrap {
+        width: 500px;
+        height: 500px;
+        position: relative;
+        clip-path: circle(50%);
+        @include tablet {
+          width: 320px;
+          height: 320px;
+        }
+        .author {
+          width: 100%;
+          height: 100%;
+          @include mid();
+        }
+      }
+      .signature {
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        transform: rotate(-5deg);
+        @include mobile {
+          width: 300px;
+          bottom: -30px;
+        }
+      }
+    }
+    &__inner {
+      margin-left: 30px;
+      max-width: 600px;
+      @include mobile {
+        margin-left: 0;
+      }
+      .word {
+        @include text($fs-small-body, $font-light, auto, $grey-cl, capitalize);
+      }
+      .title {
+        @include text($fs-h2, $font-medium-italic, auto, $white-cl, none);
+        font-weight: bold;
+        @include mobile {
+          font-size: 3rem;
+          text-align: center;
+        }
+      }
+      .description {
+        padding: 30px 0 20px 0;
+        @include text($fs-body, $font-light, 36px, $white-cl, none);
+        a {
+          color: #f0c2c2;
+          font-family: $font-medium-italic;
+        }
+      }
+      .passion {
+        &__header {
+          @include midFlex();
+          justify-content: flex-start;
+          margin-bottom: 15px;
+          span {
+            padding-left: 10px;
+            @include text($fs-body, $font-light, auto, $grey-cl, none);
+          }
+        }
+        &__body {
+          span {
+            @include text($fs-small-body, $font-light, auto, $grey-cl, none);
+          }
+        }
+      }
+      .cv {
+        margin-top: 40px;
+        background: $white-cl;
+        &::after {
+          background: $black-cl;
+        }
+        span {
+          @include text($fs-small-body, $font-regular, 1, $black-cl, capitalize);
+        }
+      }
+    }
+  }
+
+  .skills {
+    &__title {
+      @include text($fs-h3, $font-medium-italic, 96px, $white-cl, capitalize);
+      position: relative;
+      &:before {
+        content: '';
+        width: 50px;
+        height: 1px;
+        background-color: $white-cl;
+        display: block;
+        position: absolute;
+        left: -60px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      @include mobile {
+        font-size: $fs-h4;
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    &__list {
+      margin-top: 30px;
+      @include midFlex();
+      align-items: flex-start;
+      justify-content: space-between;
+      @include mobile {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      &-item {
+        @include mobile {
+          min-width: 180px;
+          margin-bottom: 30px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        .header {
+          display: inline-flex;
+          flex-direction: column;
+          align-items: center;
+          padding-bottom: 15px;
+          h6 {
+            padding-top: 5px;
+            @include text($fs-body, $font-regular, 36px, $white-cl, capitalize);
+          }
+        }
+        .body {
+          @include midFlex();
+          flex-direction: column;
+          align-items: flex-start;
+          li {
+            span {
+              @include text($fs-small-body, $font-light, 36px, $white-cl, none);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .timelines {
+    width: 100%;
+    min-height: 100vh;
+    &__title {
+      @include text($fs-h3, $font-medium-italic, 96px, $white-cl, capitalize);
+      position: relative;
+      margin-bottom: 30px;
+      &:before {
+        content: '';
+        width: 50px;
+        height: 1px;
+        background-color: $white-cl;
+        display: block;
+        position: absolute;
+        left: -60px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      @include mobile {
+        font-size: $fs-h4;
+        &::before {
+          display: none;
+        }
+      }
+    }
+
+    .timelines {
+      position: sticky;
+      top: 0;
+      &__list {
+        width: 100%;
+        position: relative;
+        @include midFlex();
+        flex-direction: column;
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          margin: 0 auto;
+          width: 1px;
+          height: calc(100% + 20px);
+          border-left: 1px dotted $white-cl;
+          @include mobile {
+            right: auto;
+            top: auto;
+          }
+        }
+
+        &-item {
+          margin-bottom: 50px;
+          position: relative;
+          width: calc(50% - 30px);
+          &:nth-child(odd) {
+            align-self: flex-end;
+          }
+          &:nth-child(even) {
+            align-self: flex-start;
+          }
+          @include mobile {
+            width: 100%;
+            padding-left: 15px;
+            &:nth-child(even),
+            &:nth-child(odd) {
+              align-self: flex-start;
+            }
+          }
+          .title {
+            @include text($fs-body, $font-medium, 36px, $grey-cl, capitalize);
+            transition: color 0.2s $cubic-smooth;
+          }
+          .time {
+            @include text($fs-small-body, $font-light, 36px, $grey-cl, none);
+            transition: color 0.2s $cubic-smooth;
+            font-style: italic;
+          }
+          .description {
+            @include text($fs-small-body, $font-light, 36px, $grey-cl, none);
+            transition: color 0.2s $cubic-smooth;
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+        .active {
+          .title,
+          .time,
+          .description {
+            color: $white-cl;
+            transition: color 0.2s $cubic-smooth;
+          }
+          &::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: $white-cl;
+            position: absolute;
+            left: -35px;
+            top: 50%;
+            display: block;
+            @include mobile {
+              left: -4px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

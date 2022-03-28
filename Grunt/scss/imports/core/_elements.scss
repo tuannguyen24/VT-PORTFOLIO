@@ -4,7 +4,7 @@ a {
 
 .btn-primary {
   --transition: all 0.1s linear;
-  width: 170px;
+  width: 200px;
   height: 45px;
   background-color: $white-cl;
   border-radius: 30px;
@@ -13,7 +13,6 @@ a {
   position: relative;
   @include mobile {
     height: 35px;
-    width: 150px;
   }
   span {
     @include text($fs-small-body, $font-regular, 1, $black-cl, capitalize);
@@ -27,7 +26,7 @@ a {
     width: 15px;
     height: 6px;
     position: relative;
-    background-image: url('/assets/icons/right-arrow-black-icon.svg');
+    mask: url('/assets/icons/right-arrow-black-icon.svg');
     display: block;
     transition: var(--transition);
   }

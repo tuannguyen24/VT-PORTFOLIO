@@ -1,18 +1,10 @@
 $(document).ready(function () {
-  // setup slider for feature projects
-  const projectSliders = () => {
-    const slideWrapper = $('main .feature-project .main-carousel');
-    let slider = slideWrapper.flickity({
-      // options
-      cellAlign: 'left',
-      wrapAround: true,
-      contain: true,
-      autoPlay: 2000,
-      pageDots: false,
-      prevNextButtons: false,
-    });
+  let screen = {
+    mobile: 767,
+    tablet: 991,
+    desktop: 1199,
+    desktopXL: 1365,
   };
-  projectSliders();
 
   // setup custom slider
   const updateCursor = (e) => {
@@ -24,6 +16,20 @@ $(document).ready(function () {
     cursor.css('left', `${x}px`);
   };
   $(window).on('mousemove', updateCursor);
+
+  let configStorageDevice = () => {
+    let windowSize = $(window).width();
+    if (windowSize <= screen.mobile) {
+      localStorage.setItem('device', 'mobile');
+    } else if (windowSize <= screen.tablet) {
+      localStorage.setItem('device', 'tablet');
+    } else if (windowSize <= screen.desktop) {
+      localStorage.setItem('device', 'desktop');
+    } else {
+      localStorage.setItem('device', 'desktop-xl');
+    }
+  };
+  configStorageDevice();
 
   // active cursor when hover
   let activeCursor = () => {
@@ -62,6 +68,90 @@ $(document).ready(function () {
     });
   };
   manageInfoMenu();
+
+  const scrollEffectLocomotive = () => {
+    var scroll = new LocomotiveScroll({
+      el: document.querySelector('[data-scroll-container]'),
+      smooth: true,
+      smoothMobile: true,
+      offset: ['15%'],
+      lerp: 0.15,
+      getSpeed: true,
+      getDirection: true,
+      reloadOnContextChange: true,
+      resetNativeScroll: true,
+      tablet: { smooth: true },
+      smartphone: { smooth: true },
+    });
+    // scroll.on('scroll',Obj =>{
+    //     let nav_menu = $('.header_page');
+    //     const detalY = Obj.delta.y;
+    //     if(detalY > 270){
+    //         nav_menu.slideDown();
+    //         nav_menu.addClass('active');
+    //     }else{
+    //         nav_menu.slideUp();
+    //     }
+    // })
+    // let backToTop = $('footer .backToTop');
+    // backToTop.on('click', function () {
+    //   scroll.scrollTo(-document.body.offsetHeight);
+    // });
+  };
+  scrollEffectLocomotive();
+
+  // scrollAnimationTimelines
+  const scrollAnimationTimelines = () => {
+    const title = $('.aboutpage .timelines .timelines__title');
+    const item = $('.aboutpage .timelines .timelines__list-item');
+    const itemInnerTitle = $('.aboutpage .timelines .timelines__list-item .title');
+    const itemInnerTime = $('.aboutpage .timelines .timelines__list-item .time');
+    const itemInnerDescription = $('.aboutpage .timelines .timelines__list-item .description');
+
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.timeline();
+
+    gsap.fromTo(
+      itemInnerTitle,
+      {
+        scrollTrigger: {
+          trigger: '.aboutpage .timelines',
+          scrub: true,
+          makers: 'true',
+          toggleActions: 'restart pause pause pause',
+        },
+        y: 70,
+        duration: 0.4,
+        opacity: 0,
+      },
+      {
+        scrollTrigger: {
+          trigger: '.aboutpage .timelines',
+          scrub: true,
+          makers: 'true',
+          toggleActions: 'restart pause pause pause',
+        },
+        y: 0,
+        ease: 'expo.inOut',
+        duration: 0.4,
+        opacity: 1,
+      },
+    );
+  };
+  scrollAnimationTimelines();
+
+  // detect device
+  const detectDevice = () => {
+    let md = new MobileDetect(window.navigator.userAgent);
+    if (md.mobile() != null || md.tablet() != null) {
+      mobile = true;
+      tablet = true;
+    } else {
+      mobile = false;
+      tablet = false;
+    }
+  };
+  detectDevice();
 
   // setup hover effect title main
   let hoverEffectTranslateMatrix = () => {
